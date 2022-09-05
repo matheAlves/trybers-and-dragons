@@ -1,7 +1,6 @@
 export default abstract class Race {
   constructor(private _name: string, private _dexterity: number) {}
 
-  // acessa valor via race.age (como um atributo)
   get name(): string {
     return this._name;
   }
