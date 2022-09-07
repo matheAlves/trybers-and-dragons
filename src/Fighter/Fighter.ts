@@ -12,10 +12,6 @@ export interface DEF {
   defense: number;
 }
 
-export interface Attacker {
-  attack(enemy: Fighter): void,
-}
-
 export interface SpAttacker {
   special?(enemy: Fighter): void,
 }
@@ -29,6 +25,8 @@ export interface ReceiveDmg {
 }
 
 export default interface Fighter extends 
-  LP, STR, DEF, Attacker, SpAttacker, LvlUp, ReceiveDmg {
-  energy: Energy
+  LP, STR, DEF, LvlUp, ReceiveDmg {
+  attack(enemy: Fighter): void,
+  special?(enemy: Fighter): void,
+  energy?: Energy
 }
